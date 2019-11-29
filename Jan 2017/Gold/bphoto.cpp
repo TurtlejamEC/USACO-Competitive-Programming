@@ -4,54 +4,6 @@
 
 using namespace std;
 
-//class Segtree {
-//public:
-//    vector<int> nodes;
-//    int originalSize;
-//
-//    void build(int current, int cl, int cr, vector<int>& parent) {
-//        if (cl == cr) {
-//            nodes[current] = parent[cl];
-//            return;
-//        }
-//
-//        int mid = (cl + cr) / 2;
-//        build(2*current, cl, mid, parent);
-//        build(2*current+1, mid+1, cr, parent);
-//        nodes[current] = min(nodes[2*current], nodes[2*current+1]);
-//    }
-//
-//    int queryHelper (int h, int current, int l, int r, int cl, int cr) {
-//        if (l > cr || r < cl) return 0;
-//
-//        int mid = (cl + cr) / 2;
-//        if (nodes[current] <= h) {
-//            if (cl == cr) return 0;
-//            return queryHelper(h, 2*current, l, r, cl, mid) +
-//            queryHelper(h, 2*current+1, l, r, mid+1, cr);
-//        } else {
-//            if (l <= cl && cr <= r) return cr - cl + 1;
-//            return 0;
-//        }
-//    }
-//
-//    int query(int h, int l, int r) {
-//        return queryHelper(h, 1, l, r, 0, originalSize-1);
-//    }
-//
-//    Segtree(vector<int>& parent) {
-//        originalSize = parent.size();
-//        int size = 1;
-//        if (originalSize && !(originalSize & originalSize-1)) size = originalSize;
-//        else {
-//            while (size < parent.size()) size <<= 1;
-//        }
-//
-//        nodes = vector<int>(2*size);
-//        build(1, 0, originalSize - 1, parent);
-//    }
-//};
-
 class SegTree {
 public:
     vector< vector<int> > tree;
